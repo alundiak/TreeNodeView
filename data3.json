@@ -1,0 +1,25 @@
+[{
+    "text": "Level A3 - 1",
+    "node": [{
+        "text": "Level B3 - 1",
+        "node": [{
+            "text": "Level C3 - 1",
+            "node": [{
+                "text": "Level D3 - 1",
+                "node": null
+            }]
+        }]
+    }]
+}, {
+    "text": "Level A3 - 2",
+    "node": [{
+        "text": "Level B3 - 2",
+        "node": [{
+            "text": "Level C3 - 2",
+            "node": [{
+                "text": "Level D3 - 2",
+                "node": null
+            }]
+        }]
+    }]
+}]

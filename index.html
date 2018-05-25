@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TreeNodeView</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.8.8/backbone.marionette.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+</head>
+
+<body>
+    
+    <!-- TEMPLATE:
+    <ul>
+		<li>abc1</li>
+		<li>abc2</li>
+		<ul>
+			<li>yo1</li>
+			<li>yo2</li>
+			<ul>
+				<li>aaaaa1</li>
+				<li>aaaaa2</li>
+				<li>aaaaa3</li>
+			</ul>
+		</ul>
+		<li>abc3</li>
+	</ul> -->
+
+	<!-- DYNAMIC: -->
+	<div id="mainRegion"></div>
+
+    <script id="layout-template" type="text/template">
+        <label for="dataSetDropdown">Change Data Set</label>
+        <select id="dataSetDropdown">
+            <option value="1">data1</option>
+            <option value="2">data2</option>
+            <option value="3">data3</option>
+            <option></option>
+        </select>
+        <a href="#" id="visibilityTrigger">Collapse</a>
+
+        <div class="tree-node-region"></div>
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

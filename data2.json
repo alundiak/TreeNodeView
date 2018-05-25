@@ -1,0 +1,37 @@
+[{
+    "text": "Level A2 - 1",
+    "node": [{
+        "text": "Level B2 - 1",
+        "node": [{
+            "text": "Level C2 - 1",
+            "node": [{
+                "text": "Level D2 - 1",
+                "node": null
+            }]
+        }]
+    }]
+}, {
+    "text": "Level A2 - 2",
+    "node": null
+}, {
+    "text": "Level A2 - 3",
+    "node": [{
+        "text": "Level B2 - 2",
+        "node": null
+    }]
+}, {
+    "text": "Level A2 - 4",
+    "node": null
+}, {
+    "text": "Level A2 - 5",
+    "node": [{
+        "text": "Level B2 - 3",
+        "node": [{
+            "text": "Level C2 - 2",
+            "node": [{
+                "text": "Level D2 - 2",
+                "node": null
+            }]
+        }]
+    }]
+}]
