@@ -1,24 +1,24 @@
 [{
     "text": "Level A3 - 1",
-    "node": [{
+    "nodes": [{
         "text": "Level B3 - 1",
-        "node": [{
+        "nodes": [{
             "text": "Level C3 - 1",
-            "node": [{
+            "nodes": [{
                 "text": "Level D3 - 1",
-                "node": null
+                "nodes": null
             }]
         }]
     }]
 }, {
     "text": "Level A3 - 2",
-    "node": [{
+    "nodes": [{
         "text": "Level B3 - 2",
-        "node": [{
+        "nodes": [{
             "text": "Level C3 - 2",
-            "node": [{
+            "nodes": [{
                 "text": "Level D3 - 2",
-                "node": null
+                "nodes": null
             }]
         }]
     }]

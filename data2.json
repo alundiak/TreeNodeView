@@ -1,36 +1,36 @@
 [{
     "text": "Level A2 - 1",
-    "node": [{
+    "nodes": [{
         "text": "Level B2 - 1",
-        "node": [{
+        "nodes": [{
             "text": "Level C2 - 1",
-            "node": [{
+            "nodes": [{
                 "text": "Level D2 - 1",
-                "node": null
+                "nodes": null
             }]
         }]
     }]
 }, {
     "text": "Level A2 - 2",
-    "node": null
+    "nodes": null
 }, {
     "text": "Level A2 - 3",
-    "node": [{
+    "nodes": [{
         "text": "Level B2 - 2",
-        "node": null
+        "nodes": null
     }]
 }, {
     "text": "Level A2 - 4",
-    "node": null
+    "nodes": null
 }, {
     "text": "Level A2 - 5",
-    "node": [{
+    "nodes": [{
         "text": "Level B2 - 3",
-        "node": [{
+        "nodes": [{
             "text": "Level C2 - 2",
-            "node": [{
+            "nodes": [{
                 "text": "Level D2 - 2",
-                "node": null
+                "nodes": null
             }]
         }]
     }]
