@@ -14,7 +14,9 @@ var TreeNodeLayout = Marionette.Layout.extend({
         'click #visibilityTrigger': 'toggleVisibility'
     },
     changeData: function(e) {
-        this.$('#visibilityTrigger').text('Collapse All');
+        if (this.$('#visibilityTrigger').text() === 'Expand All'){
+        	this.$('#visibilityTrigger').text('Collapse All');	
+        }
         this.collection.fieldId = $(e.target).val();
         this.collection.fetch();
     },

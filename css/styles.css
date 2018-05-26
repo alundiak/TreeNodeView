@@ -1,0 +1,33 @@
+body {
+    padding: 10px;
+}
+
+.item-text {
+    cursor: pointer;
+}
+
+/*This is for CompositeView example, when ONLy first level has icon*/
+.collection-view > li {
+    list-style-type: none;
+    position: relative;
+    border: 1px dashed green;
+}
+
+.collection-view > li > .glyphicon {
+    position: absolute;
+    top: 3px;
+    left: -20px;
+}
+
+/*This is for CollectionView example, when ALL LI elements on all levels have icon*/
+[class^="collection-view-view"] > li {
+    list-style-type: none;
+    position: relative;
+    border: 1px dashed green;
+}
+
+[class^="collection-view-view"] > li > .glyphicon {
+    position: absolute;
+    top: 3px;
+    left: -20px;
+}

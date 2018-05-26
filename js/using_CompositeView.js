@@ -27,7 +27,7 @@ var TreeCompositeView = Backbone.Marionette.CompositeView.extend({
         if (this.collection.isEmpty()) {
             // taken from http://jsfiddle.net/hoffmanc/NH9J6/ and reworked, to avoid useless empty UL at the end of LI.
             this.$('ul:first').remove();
-        } else if (this.options.hasOwnProperty('itemViewIndex')) {
+        } else if (this.options.hasOwnProperty('itemViewIndex')) { // having itemViewIndex is a sign that it's root LI element.
             // added to implement chevron-like icon behavior.
             this.$el.prepend('<span class="glyphicon glyphicon-chevron-down"></span>');
         }
@@ -76,7 +76,11 @@ var TreeCompositeView = Backbone.Marionette.CompositeView.extend({
         } else if (this.model.get('itemText') === 'Level A1 - 1'){
             cachedModel1 = this.model; // like temp1 from console.    
         }
-    }
+    },
+    onClose: function() {
+        // executed automatically, on itemView change/re-render/etc
+        console.log('main compositeView custom cleanup/closing code');
+    },
 });
 
 var TreeCollectionView = Backbone.Marionette.CollectionView.extend({
@@ -98,17 +102,21 @@ var TreeCollectionView = Backbone.Marionette.CollectionView.extend({
 
     },
     itemView: TreeCompositeView,
+
     itemEvents: {
         'onBeforeRender': function() {
             console.log('UL onBeforeRender');
         },
         'render': function() {
-            console.log('UL itemView has been rendered');
+            // by providing itemEvents here, in UL (CollectionView) we subscribe for ALL itemView events.
+            // so if 3 itemView instances will be rendered, then 3 console.log() entries will be executed.
+            console.log('UL itemView has been rendered', this);
         },
         'onItemClose': function() {
             console.log('UL itemView has been closed');
         },
         'customEventAndrii': function() {
+            // same with custom event - if event triggered from itemView (child view) then it will be listened 3 times here.
             console.log('customEventAndrii triggered from LI (child), but propagated to UL (parent)');
         }
     },
@@ -119,7 +127,11 @@ var TreeCollectionView = Backbone.Marionette.CollectionView.extend({
             itemViewIndex: index, // will be available ONLY for root LI elements !!!
             fromParentOption: 'hello'
         };
-    }
+    },
+    onClose: function() {
+        // looks like not executed automatically.
+        console.log('main collectionView custom cleanup/closing code');
+    },
 });
 
 var collView = new TreeCollectionView({
