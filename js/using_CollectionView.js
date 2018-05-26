@@ -1,16 +1,11 @@
 var LIView = Marionette.ItemView.extend({
     tagName: 'li',
-    template: _.template('<span><%=itemText%></span><ul class="aaa"></ul>'),
+    template: _.template('<span class="item-text"><%=itemText%></span><ul></ul>'),
     className: function() {
-        return 'item-view-' + this.options.index;
+        return 'item-view-' + this.model.cid;
     },
     initialize: function() {
         console.log('INIT ITEM_VIEW');
-    },
-    appendHtml: function(collectionView, itemView) {
-        console.log(collectionView, itemView);
-        
-        // collectionView.$('ul.aaa').append(itemView.el);
     },
     render: function() {
         console.log('RENDER ITEM_VIEW', this);
@@ -22,17 +17,27 @@ var LIView = Marionette.ItemView.extend({
 
         return this;
     },
-    events: {
-        'click': 'clickLiElement'
+    onRender: function() {
+        console.log(this);
+        // taken from http://jsfiddle.net/hoffmanc/NH9J6/ and reworked, to avoid useless empty UL at the end of LI.
+        // if (this.collection.isEmpty()) {
+        if (!this.model.get('nodes')) {
+            this.$('ul:first').remove();
+        }
     },
-    clickLiElement: function(e) {
-        console.log(this, e);
+    events: {
+        'click .item-text': 'handleCollapseExpand'
+    },
+    handleCollapseExpand: function(e) {
+        // console.log(this, e);
+        e.stopPropagation();
+        $(e.delegateTarget).find('ul').toggle();
     }
 });
 
 var ULView = Marionette.CollectionView.extend({
     tagName: 'ul',
-    template: _.template('<%=text%>'),
+    // template: _.template('<%=text%>'),
     render: function() {
         console.log('RENDER COLLECTION_VIEW');
         if (this.model) {
@@ -40,9 +45,10 @@ var ULView = Marionette.CollectionView.extend({
         }
         return this;
     },
-    // appendHtml: function(collectionView, itemView){
-    //     collectionView.$('li:first').append(itemView.el);
-    // },
+    appendHtml: function(collectionView, itemView) {
+        console.log(collectionView, itemView);
+        // collectionView.$('li:first').append(itemView.el);
+    },
     className: function() {
         // console.log(this);
         return 'collection-view-' + this.options.index;
@@ -102,7 +108,7 @@ var ULView = Marionette.CollectionView.extend({
     },
 
     // itemView events are traversed/forwarded up to collectionView
-    itemViewEventPrefix: 'my:li',
+    itemViewEventPrefix: 'my:li', // if omitted then default value is "itemview"
 
     onClose: function() {
         console.log('custom cleanup or closing code, here');
