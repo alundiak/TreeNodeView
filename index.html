@@ -13,6 +13,9 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js"></script>
     <style type="text/css">
+        body {
+            padding: 10px;
+        }
         .item-text {
             cursor: pointer;
         }
@@ -20,7 +23,13 @@
 </head>
 
 <body>
-    
+    <div>
+        <h1>TreeNode View</h1>
+        <p><span>Built with Backbone.Marionette version 1.8.8</span>. Using <strong><a target="_blank" href="https://marionettejs.com/docs/v1.8.8/marionette.collectionview.html">CollectionView</a></strong> and <strong><a target="_blank" href="https://marionettejs.com/docs/v1.8.8/marionette.compositeview.html">CompositeView</a></strong></p>
+
+        GitHub: <a target="_blank" href="https://github.com/alundiak/TreeNodeView">alundiak</a>
+    </div>
+    <br>
     <!-- TEMPLATE:
     <ul>
 		<li>abc1</li>
@@ -49,6 +58,7 @@
             <option></option>
         </select>
         <a href="#" id="visibilityTrigger">Collapse All</a>
+        <span> | </span> <span> Leaf elements in TreeNode are also clickable </span> 
 
         <div class="tree-node-region"></div>
     </script>
