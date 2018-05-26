@@ -1,0 +1,25 @@
+[{
+    "itemText": "Level A3 - 1",
+    "nodes": [{
+        "itemText": "Level B3 - 1",
+        "nodes": [{
+            "itemText": "Level C3 - 1",
+            "nodes": [{
+                "itemText": "Level D3 - 1",
+                "nodes": null
+            }]
+        }]
+    }]
+}, {
+    "itemText": "Level A3 - 2",
+    "nodes": [{
+        "itemText": "Level B3 - 2",
+        "nodes": [{
+            "itemText": "Level C3 - 2",
+            "nodes": [{
+                "itemText": "Level D3 - 2",
+                "nodes": null
+            }]
+        }]
+    }]
+}]

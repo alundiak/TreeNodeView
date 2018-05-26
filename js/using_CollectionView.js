@@ -1,6 +1,6 @@
 var LIView = Marionette.ItemView.extend({
     tagName: 'li',
-    template: _.template('<span><%=text%></span><ul class="aaa"></ul>'),
+    template: _.template('<span><%=itemText%></span><ul class="aaa"></ul>'),
     className: function() {
         return 'item-view-' + this.options.index;
     },

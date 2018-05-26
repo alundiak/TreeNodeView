@@ -4,7 +4,7 @@ var Nodes = Backbone.Collection.extend({
     },
     url: function(options) {
         var fileId = this.fieldId || 1;
-        return `data${fileId}.json`;
+        return `data/data${fileId}.json`;
     }
 });
 
